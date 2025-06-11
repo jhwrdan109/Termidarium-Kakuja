@@ -11,6 +11,16 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  {
+    files: ["**/*.js", "**/*.ts", "**/*.tsx", "**/*.jsx"],
+    rules: {
+      // Desativa todas as regras (usar 'off' para regras específicas)
+    },
+    linterOptions: {
+      noInlineConfig: false, // permite comentários como /* eslint-disable */
+    },
+  },
 ];
 
 export default eslintConfig;
